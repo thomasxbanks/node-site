@@ -1,3 +1,4 @@
+'use strict'
 // require express
 let express = require('express')
     // require path
@@ -6,7 +7,7 @@ let path = require('path')
 let router = express.Router()
 
 let bodyParser = require('body-parser')
-let urlEncodedParser = bodyParser.urlencoded({ extended: false })
+let urlEncodedParser = bodyParser.urlencoded({ extended: true })
 // export our router
 module.exports = router
 

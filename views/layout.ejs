@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>My Node Site</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <a href="/" class="navbar-brand">My Site</a>
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page_hero" style="background-image: url(<%- defineContent('heroImgFull') %>);">
+        <img class="hero_img-full" src="<%- defineContent('heroImgFull') %>" alt="">
+        <img class="hero_img-thumb" src="<%- defineContent('heroImgThumb') %>" alt="">
+        <div class="inner">
+            <div class="content">
+                <%- defineContent('heroText') %>
+            </div>
+        </div>
+    </section>
+
+
+    <main>
+        <div class="container">
+            <%- body %>
+        </div>
+    </main>
+
+    <footer>
+        Awesome site. Copyright &copy; 2016
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.hero_img-full').one("load", function() {
+                $('.hero_img-thumb').animate({
+                    'opacity': 0
+                }, 500)
+            }).each(function() {
+                if (this.complete) $(this).load()
+            })
+        })
+    </script>
+</body>
+
+</html>

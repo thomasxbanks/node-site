@@ -1,0 +1,24 @@
+<%- contentFor('heroImgFull') %>
+/img/hero-full-about.jpg
+<%- contentFor('heroImgThumb') %>
+/img/hero-thumb-about.jpg
+
+<%- contentFor('heroText') %>
+    <h2>About us</h2>
+    <p>The three of us make the best products</p>
+
+
+    <%- contentFor('body') %>
+        <div class="jumbotron text-center">
+            <h1>The Team</h1>
+            <div class="row">
+                <% for (user of users) { %>
+                    <div class="col-sm-3">
+                        <h2>
+                <%= user.name %>
+              </h2>
+                        <img src="<%= user.avatar %>" alt="<%= user.name %>" class="img-responsive">
+                    </div>
+                    <% } %>
+            </div>
+        </div>

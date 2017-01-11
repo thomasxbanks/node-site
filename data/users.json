@@ -1,0 +1,48 @@
+{
+    "users": [{
+        "username": "brain",
+        "name": "Thom",
+        "contact": {
+            "email": "thom@scrummable.com",
+            "phone": "01610161016"
+        },
+        "avatar": "//placekitten.com/g/300/300",
+        "status": "enabled"
+    }, {
+        "username": "woo",
+        "name": "Rach",
+        "contact": {
+            "email": "rach@scrummable.com",
+            "phone": "01610161016"
+        },
+        "avatar": "//placekitten.com/g/400/400",
+        "status": "enabled"
+    }, {
+        "username": "bunny",
+        "name": "Kiitos",
+        "contact": {
+            "email": "kiitos@scrummable.com",
+            "phone": "01610161016"
+        },
+        "avatar": "//placekitten.com/g/500/500",
+        "status": "enabled"
+    }, {
+        "username": "yukichan",
+        "name": "Yuki",
+        "contact": {
+            "email": "yuki@scrummable.com",
+            "phone": "01610161016"
+        },
+        "avatar": "//placekitten.com/g/450/450",
+        "status": "disabled"
+    }, {
+        "username": "thebird",
+        "name": "The Bird",
+        "contact": {
+            "email": "bird@scrummable.com",
+            "phone": "01610161016"
+        },
+        "avatar": "//placekitten.com/g/350/350",
+        "status": "disabled"
+    }]
+}

@@ -18,24 +18,9 @@ router.get('/', (req, res) => {
 
 // Route for about page
 router.get('/about', (req, res) => {
-    let users = [{
-            name: 'Thom',
-            email: 'thom@scrummable.com',
-            avatar: '//placekitten.com/g/300/300'
-        },
-        {
-            name: 'Rach',
-            email: 'rach@scrummable.com',
-            avatar: '//placekitten.com/g/400/400'
-        },
-        {
-            name: 'Kiitos',
-            email: 'kiitos@scrummable.com',
-            avatar: '//placekitten.com/g/500/500'
-        }
-    ]
+    let users = require('../data/users.json')
     res.render('pages/about', {
-        users: users
+        users: users.users
     })
 })
 

@@ -67,3 +67,10 @@ footer {
 .page_hero .hero_img-thumb.destroy {
   opacity: 0;
 }
+
+.user-summary .btn {
+  margin: 1em 0.5em;
+}
+.user-summary[data-status="disabled"] {
+  opacity: 0.5;
+}

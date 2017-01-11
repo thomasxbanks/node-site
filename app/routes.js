@@ -6,8 +6,6 @@ let path = require('path')
     // create our router object
 let router = express.Router()
 
-let bodyParser = require('body-parser')
-let urlEncodedParser = bodyParser.urlencoded({ extended: true })
 // export our router
 module.exports = router
 
@@ -28,7 +26,7 @@ router.get('/about', (req, res) => {
 router.get('/contact', (req, res) => {
     res.render('pages/contact')
 })
-router.post('/contact', urlEncodedParser, (req, res) => {
+router.post('/contact', (req, res) => {
     res.send('Thank you for contacting us, ' + req.body.name + '. We will respond shortly!')
     console.log(req.body)
 })

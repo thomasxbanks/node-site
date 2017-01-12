@@ -1,35 +1,32 @@
 <%- contentFor('heroImgFull') %>
-/img/hero-full-contact.jpg
-<%- contentFor('heroImgThumb') %>
-/img/hero-thumb-contact.jpg
+    /img/hero-full-contact.jpg
+    <%- contentFor('heroImgThumb') %>
+        /img/hero-thumb-contact.jpg
 
-<%- contentFor('heroText') %>
-    <h2>Get in touch</h2>
+        <%- contentFor('heroText') %>
+            <h2>Get in touch</h2>
 
-<%- contentFor('body') %>
-        <div class="jumbotron text-center">
-            <div class="row">
-                <div class="col-sm-6 col-sm-offset-3">
-                    <h2>Contact Us!</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis itaque veritatis molestiae, in molestias iure minus distinctio omnis consequuntur repellendus.</p>
-                    <form action="/contact" method="POST">
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" for="name" placeholder="John Smith" class="form-control">
+            <%- contentFor('body') %>
+                <div class="jumbotron text-center">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <form action="" method="post" enctype="multipart/form-data">
+                                <fieldset class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name" />
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input class="form-control" type="email" id="email" name="email" placeholder="Enter your email address" />
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <label for="description">Description:</label>
+                                    <textarea class="form-control" id="description" name="description" placeholder="Enter a short description about yourself"></textarea>
+                                </fieldset>
+                                <fieldset class="form-group">
+                                    <input type="submit" value="Create Profile" />
+                                </fieldset>
+                            </form>
                         </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" for="email" placeholder="john@smiths.com" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Your message</label>
-                            <input type="text" for="message" placeholder="i would like to say&hellip;" class="form-control">
-                        </div>
-                        <div class="form-group text-right">
-                            <button type="submit" class="btn btn-primary btn-lg">Send</button>
-                        </div>
-                    </form>
-
+                    </div>
                 </div>
-            </div>
-        </div>

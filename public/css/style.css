@@ -36,7 +36,7 @@ footer {
   background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
-.page_hero .inner .content h2, .page_hero .inner .content p {
+.page_hero .inner .content h2, .page_hero .inner .content small, .page_hero .inner .content p {
   display: block;
   padding: 1em;
   margin: 0;

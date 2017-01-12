@@ -1,8 +1,8 @@
 {
     "fields": {
-        "name": "This is the post title",
-        "email": "thomasxbanks@gmail.com",
-        "description": "Lorem <strong>IPSUM</strong> dolor sit amet."
+        "users": "Rach",
+        "name": "I am a woo and I'm writing an article",
+        "description": "Once upon a time there was a Woo and she was epic"
     },
     "files": {}
 }

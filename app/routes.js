@@ -12,6 +12,8 @@ module.exports = router
 var  formidable = require('formidable')
 var util = require('util')
 
+
+
 // Route for home page
 router.get('/', (req, res) => {
     res.render('pages/home')
@@ -42,7 +44,18 @@ router.get('/posts', (req, res) => {
 
 // Route for contact page
 router.get('/contact', (req, res) => {
-    res.render('pages/contact')
+    let users = require('../data/users.json')
+    var jf = require('jsonfile')
+    jf.readFile('./data/users.json', function(err, obj) {
+            console.log(err, obj.fields)
+            res.render('pages/contact', {
+                users: obj.users
+            })
+
+        })
+        // res.render('pages/contact', {
+        //   users: users.users
+        // })
 })
 
 // Route for the submission of the form to the "database"
@@ -63,10 +76,12 @@ router.post('/contact', (req, res) => {
             }, function() {
                 console.log('Written data:', content)
                 let response = require('../data/test.json')
+                let users = require('../data/users.json')
                 res.render('pages/contact', {
-                    data: response.fields
+                    data: response.fields,
+                    users: users.users
                 })
-
+                console.log(users)
             })
 
 

@@ -8,9 +8,5 @@
 
             <%- contentFor('body') %>
                 <main>
-                    <p></p>
+                    <%= data.description %>
                 </main>
-
-                <script>
-                    document.querySelector('main p').innerHTML = "<%= data.description %>"
-                </script>

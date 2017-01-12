@@ -9,19 +9,12 @@ let router = express.Router()
 // export our router
 module.exports = router
 
-var  formidable  =  require('formidable')
+var  formidable = require('formidable')
 var util = require('util')
 
 // Route for home page
 router.get('/', (req, res) => {
-    var response = require('../data/test.json')
-    res.render('pages/home', {
-        data: response.fields
-    })
-    console.log('from Home', response.fields.name)
-
-    // ORIGINAL
-    // res.render('pages/home')
+    res.render('pages/home')
 })
 
 // Route for about page
@@ -32,10 +25,24 @@ router.get('/about', (req, res) => {
     })
 })
 
+// Route for Post page
+router.get('/posts', (req, res) => {
+    var jf = require('jsonfile')
+    jf.readFile('./data/test.json', function(err, obj) {
+            console.log(err, obj.fields)
+            res.render('pages/posts', {
+                data: obj.fields
+            })
+
+        })
+        // ORIGINAL
+        // let response = require('../data/test.json')
+        //res.render('pages/posts', {data: response.fields})
+})
+
 // Route for contact page
 router.get('/contact', (req, res) => {
-    let response = require('../data/test.json')
-    res.render('pages/contact', {data: response.fields})
+    res.render('pages/contact')
 })
 
 // Route for the submission of the form to the "database"

@@ -1,8 +1,8 @@
 {
     "fields": {
-        "name": "Thomas Banks",
+        "name": "This is the post title",
         "email": "thomasxbanks@gmail.com",
-        "description": ""
+        "description": "Lorem <strong>IPSUM</strong> dolor sit amet."
     },
     "files": {}
 }

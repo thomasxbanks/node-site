@@ -1,0 +1,16 @@
+<%- contentFor('heroImgFull') %>
+    /img/hero-full-about.jpg
+    <%- contentFor('heroImgThumb') %>
+        /img/hero-thumb-about.jpg
+
+        <%- contentFor('heroText') %>
+            <h2><%= data.name %></h2>
+
+            <%- contentFor('body') %>
+                <main>
+                    <p></p>
+                </main>
+
+                <script>
+                    document.querySelector('main p').innerHTML = "<%= data.description %>"
+                </script>

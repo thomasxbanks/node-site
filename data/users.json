@@ -26,23 +26,5 @@
         },
         "avatar": "//placekitten.com/g/500/500",
         "status": "enabled"
-    }, {
-        "username": "yukichan",
-        "name": "Yuki",
-        "contact": {
-            "email": "yuki@scrummable.com",
-            "phone": "01610161016"
-        },
-        "avatar": "//placekitten.com/g/450/450",
-        "status": "disabled"
-    }, {
-        "username": "thebird",
-        "name": "The Bird",
-        "contact": {
-            "email": "bird@scrummable.com",
-            "phone": "01610161016"
-        },
-        "avatar": "//placekitten.com/g/350/350",
-        "status": "disabled"
     }]
 }

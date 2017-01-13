@@ -42,13 +42,13 @@ router.get('/posts', (req, res) => {
         //res.render('pages/posts', {data: response.fields})
 })
 
-// Route for contact page
-router.get('/contact', (req, res) => {
+// Route for publish page
+router.get('/publish', (req, res) => {
     let users = require('../data/users.json')
     var jf = require('jsonfile')
     jf.readFile('./data/users.json', function(err, obj) {
             console.log(err, obj.fields)
-            res.render('pages/contact', {
+            res.render('pages/publish', {
                 users: obj.users
             })
 
@@ -59,7 +59,7 @@ router.get('/contact', (req, res) => {
 })
 
 // Route for the submission of the form to the "database"
-router.post('/contact', (req, res) => {
+router.post('/publish', (req, res) => {
     var jsonfile = require('jsonfile')
     var file = './data/test.json'
     var form = new formidable.IncomingForm()
@@ -77,7 +77,7 @@ router.post('/contact', (req, res) => {
                 console.log('Written data:', content)
                 let response = require('../data/test.json')
                 let users = require('../data/users.json')
-                res.render('pages/contact', {
+                res.render('pages/publish', {
                     data: response.fields,
                     users: users.users
                 })

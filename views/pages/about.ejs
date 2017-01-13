@@ -9,18 +9,16 @@
 
 
             <%- contentFor('body') %>
-                <section class="jumbotron text-center">
                     <h1>The Team</h1>
-                    <div class="row">
+                    <section class="user-summary_wrapper">
                         <% for (user of users) { %>
-                            <article data-status="<%= user.status %>" class="users user-summary col-sm-3">
+                            <article data-status="<%= user.status %>" class="user-summary">
                                 <h2>
                                   <%= user.name %>
                                 </h2>
-                                <img src="<%= user.avatar %>" alt="<%= user.name %>" class="img-responsive">
+                                <img src="<%= user.avatar %>" alt="<%= user.name %>">
                                 <button <%= user.status %> href="mailto:<%= user.contact.email %>" class="btn btn-default btn-lg">Email</button>
                                 <button <%= user.status %> href="tel:<%= user.contact.phone %>" class="btn btn-default btn-lg">Phone</button>
                             </article>
                         <% } %>
                     </section>
-                </div>

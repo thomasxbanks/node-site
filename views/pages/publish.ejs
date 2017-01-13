@@ -1,0 +1,37 @@
+<%- contentFor('heroImgFull') %>
+/img/hero-full-contact.jpg
+<%- contentFor('heroImgThumb') %>
+/img/hero-thumb-contact.jpg
+
+        <%- contentFor('heroText') %>
+            <h2>Publish your masterpiece!</h2>
+
+            <%- contentFor('body') %>
+                <form action="" method="post" enctype="multipart/form-data">
+                    <div>
+                        <p>Fill in the form to save your own details</p>
+                    </div>
+                    <fieldset>
+                        <label for="users">Who are you?</label>
+                        <select name="users" id="users">
+                          <% for (user of users) { %>
+                            <% if (user.status != 'disabled') { %>
+                              <option value="<%= user.name %>">
+                                <%= user.name %>
+                              </option>
+                              <% } %>
+                          <% } %>
+                        </select>
+                    </fieldset>
+                    <fieldset>
+                        <label for="article_title">The Title:</label>
+                        <input class="form-control" type="text" id="article_title" name="article_title" placeholder="This is the article title" />
+                    </fieldset>
+                    <fieldset>
+                        <label for="article_copy">The Copy:</label>
+                        <textarea id="article_copy" name="article_copy" placeholder="Once upon a time, there was a..."></textarea>
+                    </fieldset>
+                    <fieldset>
+                        <button type="submit">Publish Article</button>
+                    </fieldset>
+                </form>

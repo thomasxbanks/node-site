@@ -1,76 +1,352 @@
-* {
-  box-sizing: border-box;
-}
-
-
-main {
-  margin: 40px 0;
-}
-
-footer {
-  background: #222;
-  color: #ccc;
-  text-align: center;
-  padding: 40px;
-}
-
 .page_hero {
-  width: 100%;
-  min-height: 50vh;
-  display: table;
-  position: relative;
+    width: 100%;
+    min-height: 50vh;
+    display: table;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
 
 .page_hero .inner {
-  display: table-row;
+    display: table-row;
 }
 
 .page_hero .inner .content {
-  display: table-cell;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  vertical-align: middle;
-  position: relative;
-  z-index: 30;
-  background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5), rgba(0,0,0,0));
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    z-index: 30;
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .page_hero .inner .content h2, .page_hero .inner .content small, .page_hero .inner .content p {
-  display: block;
-  padding: 1em;
-  margin: 0;
-  color: #fff;
+    display: block;
+    padding: 1em;
+    margin: 0;
+    color: #fff;
 }
-.page_hero .inner .content .btn {
+
+.user-summary[data-status="disabled"] {
+    opacity: 0.5;
+}
+
+
+/* YOINKED FROM thomasxbanks */
+
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@-webkit-keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+
+/* Standard syntax */
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(45deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+html * {
+    box-sizing: border-box !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html.is-active {
+    overflow: hidden !important;
+}
+
+html body {
+    margin: 0;
+    font-family: "Arya", monospace, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    font-weight: 300;
+    color: #151924;
+    font-size: 16px;
+    background: white;
+}
+
+html body a {
+    color: #e6af2e;
+}
+
+main {
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.is-active #masthead h1 {
+    color: white;
+}
+
+.is-active #masthead h1 span {
+    color: #588aa0;
+}
+
+#masthead {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 5000;
+    width: 100%;
+    background: white;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+#masthead.scaled h1 {
+    font-size: 20px;
+    padding: 5px 20px;
+}
+
+#masthead h1 {
+    position: relative;
+    z-index: 8000;
+    font-size: 30px;
+    margin: 0 0 0 50px;
+    padding: 10px 20px;
+    font-weight: 700;
+    transition: ease-in 300ms;
+    line-height: 30px;
+}
+
+#masthead h1 span {
+    color: #34515e;
+}
+
+body>footer {
+    padding: 20px;
+    margin-top: 20px;
+    background: #151924;
+    color: white;
+    min-height: 50px;
+}
+
+
+/*------------------------------------*  #BUTTON--NORMALISE
+\*------------------------------------*/
+
+
+/*
+  Buttons are to be used when the result of the interaction occurs on the same page.
+  Buttons should not be used for page links or submitting a form _to a different page_
+*/
+
+button, .button {
+    -webkit-appearance: none;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    -webkit-tap-highlight-color: transparent;
+    border: none;
+    cursor: pointer;
+    background: #34515e;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    transition: ease-in 200ms;
+}
+
+button:hover, .button:hover {
+    background: #3d5f6e;
+}
+
+button::-moz-focus-inner, .button::-moz-focus-inner, input::-moz-focus-inner, select::-moz-focus-inner, textarea::-moz-focus-inner {
+    border: 0;
+}
+
+button:focus, .button:focus, input:focus, select:focus, textarea:focus {
+    outline: 0;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 5px;
+    width: calc(50% - 10px);
+}
+
+[class^="card-"] {
+    display: inline-block;
+    vertical-align: top;
+    width: 300px;
+    padding: 0;
+    margin: 10px;
+    border-radius: 4px;
+    background: #f0f0f0;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    transition: ease-in 100ms;
+    font-size: 16px;
+    text-align: left;
+}
+
+[class^="card-"]:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+[class^="card-"] .inner {
+    padding: 10px;
+}
+
+[class^="card-"] h2 {
+    margin: 0;
+}
+
+[class^="card-"] footer {
+    font-size: 0;
+}
+
+header#masthead button, header#masthead .button {
+    position: absolute;
+    top: calc(50% - 15px);
+    left: 10px;
+    line-height: 1.6rem;
+    z-index: 1000;
+    padding: 0;
+    margin: 0;
+    background: none;
+    transform: rotate(0deg);
+    transition: transform cubic-bezier(0.54, 0.01, 0.89, 0.63) 200ms;
+    font-size: 30px;
+    line-height: 30px;
+    color: #34515e;
+}
+
+header#masthead button.is-active, header#masthead .is-active.button {
+    transform: rotate(180deg);
+    color: white;
+}
+
+nav#primary-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    background: #22353d;
+    width: 300px;
+    height: 100vh;
+    transform: translate(-100%, 0);
+    transition: transform cubic-bezier(0.54, 0.01, 0.89, 0.63) 200ms;
+    padding-top: 30px;
+    padding-right: 20px;
+}
+
+nav#primary-nav.is-active {
+    transform: translate(0, 0);
+}
+
+nav#primary-nav ul {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    list-style-type: none;
+    padding: 0 1rem;
+    margin: 0;
+}
+
+nav#primary-nav ul li {
+    display: block;
+    padding: 1rem;
+    transition: background ease-out 200ms;
+    font-size: 1rem;
+    line-height: 1rem;
+    color: #fff;
+}
+
+nav#primary-nav ul li:hover {
+    cursor: pointer;
+}
+
+nav#primary-nav ul li:hover i:before {
+    transform: scale(2);
+}
+
+nav#primary-nav ul li i {
+    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+nav#primary-nav ul li i:before {
+    transition: cubic-bezier(0.5, -0.5, 0.5, 1.5) 200ms;
+    transform: scale(1);
+}
+
+nav#primary-nav ul li:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+form {
+    display: block;
+    width: 100%;
+}
+
+fieldset {
+    border: none;
+}
+
+label {
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+input, textarea, select {
+    -webkit-appearance: none !important;
+    border: none;
+    display: block;
+    width: 100%;
+    box-shadow: inset -1px -1px 0 #f80, inset 1px 1px 0 #f80;
+    padding: 5px;
+}
+textarea {
+  min-height: 300px;
+}
+.user-summary_wrapper {
+  font-size: 0;
+  text-align: center;
+}
+
+.user-summary {
   display: inline-block;
-  margin: 1em auto;
-  padding: 1em 2em;
+  width: 340px;
+  padding: 10px;
+  margin: 5px;
+  vertical-align: top;
+
 }
-.page_hero [class^="hero_img-"] {
+
+.user-summary img {
   display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.page_hero .hero_img-full {
-  z-index: 10;
-}
-.page_hero .hero_img-thumb {
-  z-index: 20;
-  transition: ease-out 500ms;
-}
-
-.page_hero .hero_img-thumb.destroy {
-  opacity: 0;
-}
-
-.user-summary .btn {
-  margin: 1em 0.5em;
-}
-.user-summary[data-status="disabled"] {
-  opacity: 0.5;
+  height: auto;
+  padding: 0;
+  margin: 0;
 }

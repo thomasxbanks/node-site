@@ -5,32 +5,31 @@
     <meta charset="UTF-8">
     <title>My Node Site</title>
     <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0'>
+    <link href="https://fonts.googleapis.com/css?family=Arya:400,700" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-inverse">
-            <a href="/" class="navbar-brand">My Site</a>
-            <ul class="nav navbar-nav">
+    <header id="masthead">
+        <h1>Node site</h1>
+        <button id="primary-nav-toggle" aria-label="toggle navigation">☰</button>
+        <nav id="primary-nav">
+            <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/posts">Posts</a></li>
-                <li><a href="/contact">Contact</a></li>
+                <li><a href="/publish">Publish</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="page_hero" style="background-image: url(<%- defineContent('heroImgFull') %>);">
-        <img class="hero_img-full" src="<%- defineContent('heroImgFull') %>" alt="">
-        <img class="hero_img-thumb" src="<%- defineContent('heroImgThumb') %>" alt="">
         <div class="inner">
             <div class="content">
                 <%- defineContent('heroText') %>
             </div>
         </div>
     </section>
-
 
     <main>
         <div class="container">
@@ -41,16 +40,27 @@
     <footer>
         Awesome site. Copyright &copy; 2017
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('.hero_img-full').one("load", function() {
-                $('.hero_img-thumb').animate({
-                    'opacity': 0
-                }, 250)
-            }).each(function() {
-                if (this.complete) $(this).load()
-            })
+        "use strict"
+        const masthead = document.getElementById('masthead')
+        const mastheadStyle = window.getComputedStyle(masthead)
+        const html = document.getElementsByTagName('html')[0]
+        const body = document.getElementsByTagName('body')[0]
+        const main = document.getElementsByTagName('main')[0]
+        const navToggle = document.getElementById('primary-nav-toggle')
+        const nav = document.getElementById('primary-nav')
+        html.style.paddingTop = mastheadStyle.height
+        nav.style.paddingTop = mastheadStyle.height
+        const ToggleNav = () => {
+            navToggle.classList.toggle('is-active')
+            html.classList.toggle('is-active')
+            body.classList.toggle('is-active')
+            nav.classList.toggle('is-active');
+            (navToggle.innerText == 'menu') ? navToggle.innerText = 'X': navToggle.innerText = '☰'
+        }
+
+        navToggle.addEventListener("click", () => {
+            ToggleNav()
         })
     </script>
 </body>

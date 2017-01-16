@@ -4,8 +4,6 @@
 
  var expressLayouts = require('express-ejs-layouts')
 
- var bodyParser = require('body-parser')
-
  var app = express()
  var port = 80
 
@@ -14,10 +12,6 @@
  app.set('view engine', 'ejs')
  app.use(expressLayouts)
 
- // use body parser
- app.use(bodyParser.urlencoded({
-    extended: true
- }))
 
   // set static files (css, images, etc) location
   app.use(express.static(__dirname + '/public'))

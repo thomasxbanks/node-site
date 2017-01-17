@@ -5,7 +5,7 @@
  var expressLayouts = require('express-ejs-layouts')
 
  var app = express()
- var port = 80
+ var port = 8080
 
 
  // Use ejs and express layouts
@@ -13,8 +13,8 @@
  app.use(expressLayouts)
 
 
-  // set static files (css, images, etc) location
-  app.use(express.static(__dirname + '/public'))
+ // set static files (css, images, etc) location
+ app.use(express.static(__dirname + '/public'))
 
  // route our app
  let router = require('./app/routes')

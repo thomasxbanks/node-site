@@ -44,22 +44,22 @@
         "use strict"
         const masthead = document.getElementById('masthead')
         const mastheadStyle = window.getComputedStyle(masthead)
-        const html = document.getElementsByTagName('html')[0]
-        const body = document.getElementsByTagName('body')[0]
-        const main = document.getElementsByTagName('main')[0]
+        const html = document.querySelector('html')
+        const body = document.querySelector('body')
+        const main = document.querySelector('main')
         const navToggle = document.getElementById('primary-nav-toggle')
         const nav = document.getElementById('primary-nav')
         html.style.paddingTop = mastheadStyle.height
         nav.style.paddingTop = mastheadStyle.height
+
         const ToggleNav = () => {
             navToggle.classList.toggle('is-active')
             html.classList.toggle('is-active')
             body.classList.toggle('is-active')
             nav.classList.toggle('is-active');
-            (navToggle.innerText == 'menu') ? navToggle.innerText = 'X': navToggle.innerText = '☰'
         }
 
-        navToggle.addEventListener("click", () => {
+        navToggle.addEventListener('click', () => {
             ToggleNav()
         })
     </script>

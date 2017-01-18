@@ -5,7 +5,7 @@
  var expressLayouts = require('express-ejs-layouts')
 
  var app = express()
- var port = 80
+ var port = 8080
 
 
  // Use ejs and express layouts

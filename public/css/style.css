@@ -309,6 +309,7 @@ form {
 
 fieldset {
     border: none;
+    position: relative;
 }
 
 label {
@@ -323,30 +324,57 @@ input, textarea, select {
     border: none;
     display: block;
     width: 100%;
-    box-shadow: inset -1px -1px 0 #f80, inset 1px 1px 0 #f80;
-    padding: 5px;
+    box-shadow: inset -1px -1px 0 #e6af2e, inset 1px 1px 0 #e6af2e;
+    padding: 10px;
+    line-height: 16px;
+    font-size: 16px;
 }
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    font-family: "Arya", monospace, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    color: #a9a9a9;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    font-family: "Arya", monospace, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    color: #a9a9a9;
+}
+
+:-ms-input-placeholder {
+    /* IE 10+ */
+    font-family: "Arya", monospace, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    color: #a9a9a9;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    font-family: "Arya", monospace, Arial, "Helvetica Neue", Helvetica, sans-serif !important;
+    color: #a9a9a9;
+}
+
 textarea {
-  min-height: 300px;
+    min-height: 300px;
 }
+
 .user-summary_wrapper {
-  font-size: 0;
-  text-align: center;
+    font-size: 0;
+    text-align: center;
 }
 
 .user-summary {
-  display: inline-block;
-  width: 340px;
-  padding: 10px;
-  margin: 5px;
-  vertical-align: top;
-
+    display: inline-block;
+    width: 340px;
+    padding: 10px;
+    margin: 5px;
+    vertical-align: top;
 }
 
 .user-summary img {
-  display: block;
-  width: 100%;
-  height: auto;
-  padding: 0;
-  margin: 0;
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 0;
+    margin: 0;
 }
